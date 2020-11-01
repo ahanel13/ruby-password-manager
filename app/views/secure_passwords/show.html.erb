@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @secure_password.url %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @secure_password.name %>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @secure_password.notes %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @secure_password.password %>
+</p>
+
+<%= link_to 'Edit', edit_secure_password_path(@secure_password) %> |
+<%= link_to 'Back', secure_passwords_path %>
