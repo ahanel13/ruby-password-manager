@@ -5,6 +5,7 @@ class CreateSecurePasswords < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :notes
       t.string :password
+      t.references :user
 
       t.timestamps
     end

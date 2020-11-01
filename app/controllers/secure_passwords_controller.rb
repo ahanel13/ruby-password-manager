@@ -1,5 +1,6 @@
 class SecurePasswordsController < ApplicationController
   before_action :set_secure_password, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /secure_passwords
   # GET /secure_passwords.json
