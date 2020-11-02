@@ -11225,3 +11225,32 @@
     width: 100%;
   }
   
+  .tile {
+    border-radius: 2px;
+    box-shadow: 0 1px 3px RGBA(0,24,48,0.2);
+    display: inline-block;
+    background-color: #FFF;
+    margin: 15px 0 15px 15px;
+    position: relative;
+    vertical-align: top;
+    width: 270px;
+    height: 130px;
+}
+
+.inner-tile {
+  padding: 5%;
+  height: 100%
+}
+
+.icon{
+  width: 100%;
+}
+
+.bottom-content-tile{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  padding: 5%;
+  text-align: center;
+}
