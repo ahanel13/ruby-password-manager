@@ -5,7 +5,7 @@ class SecurePasswordsController < ApplicationController
   # GET /secure_passwords
   # GET /secure_passwords.json
   def index
-    @secure_passwords = SecurePassword.all
+    @secure_passwords = SecurePassword.where(:user_id => current_user.id)
   end
 
   # GET /secure_passwords/1
