@@ -175,10 +175,13 @@
             <% @secure_passwords.each do |secure_password| %>
             <div class="tile">
               <div class="inner-tile">
-                <img class="icon" src="app/assets/images/Screenshot.png" width=100%> 
-                <td><%= secure_password.url %></td>
+                <img class="icon" src="https://password-manager-webapp.s3.amazonaws.com/162641.png" > 
+                
+                <a href='https://<%= secure_password.url %>' class="tile-url"><%= secure_password.url %></a>
+
                 <div class="bottom-content-tile">
                   <%= link_to 'Show', secure_password %>
+          
                   <%= link_to 'Edit', edit_secure_password_path(secure_password) %>
                   <%= link_to 'Destroy', secure_password, method: :delete, data: { confirm: 'Are you sure?' } %>
                 </div>

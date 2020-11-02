@@ -11243,7 +11243,11 @@
 }
 
 .icon{
-  width: 100%;
+  margin-left: 40%;
+  margin-right: 50%;
+  width: 20%;
+  height: 50%;
+  background-image: url('https://password-manager-webapp.s3.amazonaws.com/162641.png');
 }
 
 .bottom-content-tile{
@@ -11251,6 +11255,14 @@
   left: 0;
   position: absolute;
   width: 100%;
-  padding: 5%;
+  padding: 3%;
   text-align: center;
+}
+
+.tile-url{
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 12%;
+  text-align: center;
+  margin-left: 23.5%;
 }
