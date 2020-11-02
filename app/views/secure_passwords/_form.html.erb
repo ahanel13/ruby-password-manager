@@ -1,0 +1,37 @@
+<%= form_with(model: secure_password, local: true) do |form| %>
+  <% if secure_password.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(secure_password.errors.count, "error") %> prohibited this secure_password from being saved:</h2>
+
+      <ul>
+        <% secure_password.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_field :notes %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
