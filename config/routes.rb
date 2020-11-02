@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'home/login'
+  get 'home/signup'
   resources :secure_passwords
   devise_for :users
   root to: "home#index"
