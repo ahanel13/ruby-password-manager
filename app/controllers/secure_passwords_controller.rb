@@ -21,7 +21,6 @@ class SecurePasswordsController < ApplicationController
     @digest = OpenSSL::Digest.new('SHA256')
 
     puts "========================"
-    puts "password: #{@pwd}"
     puts "salt: #{@salt}"  
     puts "iter: #{@iter}"  
     puts "key_len: #{@key_len}"
@@ -31,13 +30,13 @@ class SecurePasswordsController < ApplicationController
     @cipher.key = @key
     
     puts "key: #{@key}"
-    puts "========================"
 
     #Now decrypt the data:
     @decoded = Base64.decode64(@secure_password.password).encode('ascii-8bit')
-
     @decrypted = @cipher.update @decoded
     @decrypted << @cipher.final
+    puts "decrypted password: #{@decrypted}"
+    puts "========================"
 
   end
 
@@ -57,7 +56,9 @@ class SecurePasswordsController < ApplicationController
     @secure_password[:user_id] = current_user.id
     
     #generating random password
-
+    require 'securerandom'
+    @length = 16
+    @random_password = SecureRandom.base64(@length)
 
     #encrypting all the data
     @cipher = OpenSSL::Cipher.new 'AES-256-CBC'
@@ -70,7 +71,7 @@ class SecurePasswordsController < ApplicationController
     @digest = OpenSSL::Digest.new('SHA256')
 
     puts "========================"
-    puts "password: #{@pwd}"
+    puts "randomly generated password: #{@random_password}" 
     puts "salt: #{@salt}"  
     puts "iter: #{@iter}"  
     puts "key_len: #{@key_len}"
@@ -81,7 +82,7 @@ class SecurePasswordsController < ApplicationController
     puts "key: #{@key}"
     puts "========================"
 
-    @encrypted_random_password = @cipher.update @secure_password.password
+    @encrypted_random_password = @cipher.update @random_password
     @encrypted_random_password << @cipher.final
     @secure_password[:password] = encoded = Base64.encode64(@encrypted_random_password).encode('utf-8')
     

@@ -8,7 +8,6 @@
       <th>Url</th>
       <th>Name</th>
       <th>Notes</th>
-      <th>Password</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,7 +18,6 @@
         <td><%= secure_password.url %></td>
         <td><%= secure_password.name %></td>
         <td><%= secure_password.notes %></td>
-        <td><%= secure_password.password %></td>
         <td><%= link_to 'Show', secure_password %></td>
         <td><%= link_to 'Edit', edit_secure_password_path(secure_password) %></td>
         <td><%= link_to 'Destroy', secure_password, method: :delete, data: { confirm: 'Are you sure?' } %></td>
