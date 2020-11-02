@@ -168,7 +168,27 @@
         <div class="container-fluid">
 
           <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Your Passwords</h1>
+          <%if @secure_passwords.length == 0%>
+            <h1 class="h3 mb-4 text-gray-800">No Passwords Yet</h1>
+          <% else %>
+            <h1 class="h3 mb-4 text-gray-800">Your Passwords</h1>
+            <% @secure_passwords.each do |secure_password| %>
+            <div class="tile">
+              <div class="inner-tile">
+                <img class="icon" src="https://password-manager-webapp.s3.amazonaws.com/162641.png" > 
+                
+                <a href='https://<%= secure_password.url %>' class="tile-url"><%= secure_password.url %></a>
+
+                <div class="bottom-content-tile">
+                  <%= link_to 'Show', secure_password %>
+          
+                  <%= link_to 'Edit', edit_secure_password_path(secure_password) %>
+                  <%= link_to 'Destroy', secure_password, method: :delete, data: { confirm: 'Are you sure?' } %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          <% end %>
 
         </div>
         <!-- /.container-fluid -->
@@ -180,7 +200,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
+            <span>Copyright &copy; MyPass 2020</span>
           </div>
         </div>
       </footer>

@@ -11225,3 +11225,44 @@
     width: 100%;
   }
   
+  .tile {
+    border-radius: 2px;
+    box-shadow: 0 1px 3px RGBA(0,24,48,0.2);
+    display: inline-block;
+    background-color: #FFF;
+    margin: 15px 0 15px 15px;
+    position: relative;
+    vertical-align: top;
+    width: 270px;
+    height: 130px;
+}
+
+.inner-tile {
+  padding: 5%;
+  height: 100%
+}
+
+.icon{
+  margin-left: 40%;
+  margin-right: 50%;
+  width: 20%;
+  height: 50%;
+  background-image: url('https://password-manager-webapp.s3.amazonaws.com/162641.png');
+}
+
+.bottom-content-tile{
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  padding: 3%;
+  text-align: center;
+}
+
+.tile-url{
+  bottom: 0;
+  position: absolute;
+  margin-bottom: 12%;
+  text-align: center;
+  margin-left: 23.5%;
+}
