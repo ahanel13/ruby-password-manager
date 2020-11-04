@@ -76,7 +76,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="/secure_passwords">
+        <a class="nav-link" href="#">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Passwords</span></a>
       </li>
@@ -146,7 +146,7 @@
           <%if @secure_passwords.length == 0%>
             
             <h1 class="h3 mb-4 text-gray-800">No Passwords Yet</h1>
-            <button id="create-password-dash"></button>
+            <a class="btn" id="create-password-dash" role="button" href="/secure_passwords/new">Create Password</a>
           <% else %>
             <h1 class="h3 mb-4 text-gray-800">Your Passwords</h1>
             <a class="btn" id="create-password-dash" role="button" href="/secure_passwords/new">Create Password</a>

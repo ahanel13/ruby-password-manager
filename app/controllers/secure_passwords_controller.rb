@@ -116,7 +116,7 @@ class SecurePasswordsController < ApplicationController
   def destroy
     @secure_password.destroy
     respond_to do |format|
-      format.html { redirect_to secure_passwords_url, notice: 'Secure password was successfully destroyed.' }
+      format.html { redirect_to dashboard_index_path, notice: 'Secure password was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
