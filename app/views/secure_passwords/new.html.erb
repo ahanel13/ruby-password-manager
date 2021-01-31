@@ -1,5 +1,31 @@
-<h1>New Secure Password</h1>
+<div id="password_form_container">
 
-<%= render 'form', secure_password: @secure_password %>
+    <form action="/secure_passwords" accept-charset="UTF-8" method="post">
+        <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+        
+        <div id="inputlist">
+            <h1 id="newpasswordh1">New Secure Password</h1>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="URL" name="secure_password[url]" id="secure_password_url" style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg==&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+            </div>
+            
 
-<%= link_to 'Back', dashboard_index_path %>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Username" name="secure_password[name]" id="secure_password_name">
+            </div>
+
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Notes</span>
+                </div>
+                <textarea class="form-control" type="text" name="secure_password[notes]" id="secure_password_notes"></textarea>
+            </div>
+            
+            <div class="actions" style="margin-top:1rem">
+                <input type="submit" class= "btn btn-dark" name="commit" value="Create Secure password" data-disable-with="Create Secure password">
+                <a href="/dashboard/index"><button type="button" class="btn btn-dark">Back</button></a>
+            </div>
+        </div>
+        
+    </form> 
+</div>
