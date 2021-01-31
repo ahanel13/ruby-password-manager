@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+/* footer{
+    padding: 2rem;
+    background: transparent;
+    bottom: 0;
+    position: fixed;
+} */
+
+#icon-attr {
+    background: transparent;
+
+}
